@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link href="/webchat/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/webchat/css/button.css" rel="stylesheet">
+    <script src="/webchat/js/jquery.min.js"></script>
+    <script src="/webchat/js/bootstrap.min.js"></script>
+    <style>
+        .photo {
+            width: 55px;
+            height: 55px;
+            float: left;
+            margin-left:7px;
+            margin-top:10px;
+        }
+    </style>
+    <script>
+        function check() {
+            var nick = document.getElementById("nick");
+            var loginButton = document.getElementById("loginButton");
+            if (nick.value.length>0) {
+                loginButton.removeAttribute("disabled");
+            } else {
+                loginButton.setAttribute("disabled","disabled");
+            }
+        }
+        function choice(num) {
+            $(document).ready(function(){
+                $(".photo").css("border","none");
+            });
+            var thePhoto = document.getElementById("p"+num);
+            thePhoto.style.border="3px solid lightpink";
+            var headPhoto = document.getElementById("headPhoto");
+            headPhoto.value="/webchat/img/photo("+num+").png";
+        }
+    </script>
+</head>
+<body>
+    <div class="container" id="loginDiv" style="display: none;">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="height: 320px;width: 600px; padding: 50px;background-color: #0888e6;margin: 100px auto;border-radius: 20px;">
+                    <form action="/webchat/LoginChatServlet" method="post">
+                        <!--昵称框-->
+                        <div class="input-group">
+					<span class="input-group-addon"><label for="nick"><span class="glyphicon glyphicon-user" style="color: rgb(96, 96, 95); text-shadow: rgb(106, 130, 130) 5px 5px 5px;"></span></label>
+					</span>
+                            <input type="text" placeholder="请输入昵称并选择喜欢的头像" name="nick" class="form-control input-lg" name="account" id="nick" onkeyup="check()" />
+                        </div>
+                        <!--昵称框end-->
+                        <!--头像列表-->
+                        <div class="photo" id="p1" name="photo" onclick="choice('1')" style="border: 3px solid lightpink"><a href="###"><img src="/webchat/img/photo(1).png" class="img-responsive" alt="Cinque Terre"></a> </div>
+                        <div class="photo" id="p2" name="photo" onclick="choice('2')"><a href="###"><img src="/webchat/img/photo(2).png" class="img-responsive" alt="用户头像"></a></div>
+                        <div class="photo" id="p3" name="photo" onclick="choice('3')"><a href="###"><img src="/webchat/img/photo(3).png" class="img-responsive" alt="用户头像"></a></div>
+                        <div class="photo" id="p4" name="photo" onclick="choice('4')"><a href="###"><img src="/webchat/img/photo(4).png" class="img-responsive" alt="用户头像"></a></div>
+                        <div class="photo" id="p5" name="photo" onclick="choice('5')"><a href="###"><img src="/webchat/img/photo(5).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p6" name="photo" onclick="choice('6')"><a href="###"><img src="/webchat/img/photo(6).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p7" name="photo" onclick="choice('7')"><a href="###"><img src="/webchat/img/photo(7).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p8" name="photo" onclick="choice('8')"><a href="###"><img src="/webchat/img/photo(8).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p9" name="photo" onclick="choice('9')"><a href="###"><img src="/webchat/img/photo(9).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p10" name="photo" onclick="choice('10')"><a href="###"><img src="/webchat/img/photo(10).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p11" name="photo" onclick="choice('11')"><a href="###"><img src="/webchat/img/photo(11).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p12" name="photo" onclick="choice('12')"><a href="###"><img src="/webchat/img/photo(12).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p13" name="photo" onclick="choice('13')"><a href="###"><img src="/webchat/img/photo(13).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p14" name="photo" onclick="choice('14')"><a href="###"><img src="/webchat/img/photo(14).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p15" name="photo" onclick="choice('15')"><a href="###"><img src="/webchat/img/photo(15).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <div class="photo" id="p16" name="photo" onclick="choice('16')"><a href="###"><img src="/webchat/img/photo(16).png" class="img-responsive" alt="Cinque Terre"></a></div>
+                        <!--头像列表end-->
+                        <!--按钮-->
+                        <button id="loginButton" class="button button-3d button-caution button-pill button-jumbo" disabled="disabled" style="margin-left: 125px;margin-top: 20px;" type="submit">进入聊天室</button>
+                        <!--按钮end-->
+                        <input type="text" name="headPhoto" id="headPhoto" style="display: none"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+                $("#loginDiv").fadeIn(3000);
+            });
+        headPhoto.value="/webchat/img/photo(1).png";
+    </script>
+</body>
+</html>
