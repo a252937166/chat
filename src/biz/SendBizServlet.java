@@ -31,7 +31,7 @@ public class SendBizServlet extends HttpServlet {
         HttpSession session = req.getSession();
         ServletContext servletContext = req.getServletContext();
         ArrayList messages = (ArrayList) servletContext.getAttribute("messages");
-        String[] message = {"<tr><td>" + session.getAttribute("thePhoto") +"<span style='float: left;line-height: 55px;margin-left: 10px'>" + time + "</span>\n" +  "<span style='float: left;line-height: 55px;margin-left: 10px'>" + session.getAttribute("user") +"\n说：</span></td></tr><tr><td style='padding-left:100px;'><span>" + req.getParameter("messages") + "</span>","12345654323456543"};
+        String[] message = {"<tr><td>" + session.getAttribute("thePhoto") +"<span style='float: left;line-height: 55px;margin-left: 10px'>" + time + "</span>\n" +  "<span style='float: left;line-height: 55px;margin-left: 10px'>" + session.getAttribute("user") +"\n说：</span></td></tr><tr><td style='padding-left:100px;'><span>" + req.getParameter("messages") + "</span>"};
         if (messages == null) {
             servletContext.setAttribute("messages",new ArrayList<User>());
             messages = (ArrayList) servletContext.getAttribute("messages");

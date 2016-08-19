@@ -18,7 +18,7 @@ public class XMLTest {
         // 创建saxReader对象
         SAXReader reader = new SAXReader();
         // 通过read方法读取一个文件 转换成Document对象
-        Document document = reader.read(new File("G:/chat/src/biz/data.xml"));
+        Document document = reader.read(new File("data.xml"));
         //获取根节点元素对象
         Element node = document.getRootElement();
         // 获取history元素节点中，子节点名称为用户昵称节点。
@@ -56,7 +56,7 @@ public class XMLTest {
         // XMLWriter writer = new XMLWriter(new FileWriter(new
         // File("src//a.xml")),format);
         XMLWriter writer = new XMLWriter(new OutputStreamWriter(
-                new FileOutputStream(new File("G:/chat/src/biz/data.xml")), "UTF-8"), format);
+                new FileOutputStream(new File("data.xml")), "UTF-8"), format);
         // 写入
         writer.write(document);
         // 立即写入
